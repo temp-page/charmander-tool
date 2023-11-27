@@ -1,9 +1,9 @@
-name: Build SDK
+name: Build and Deploy
 
 on:
   push:
     branches:
-      - master
+      - local
 
 jobs:
   build-and-deploy:
