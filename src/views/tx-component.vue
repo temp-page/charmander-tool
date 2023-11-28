@@ -43,7 +43,7 @@
 
 <script>
 import { showToast } from "vant";
-import {UPDATE_ENV, WALLET_CONNECT_MUTATION} from "@/store/mutation-types";
+import { UPDATE_ENV, WALLET_CONNECT_MUTATION } from "@/store/mutation-types";
 import {
   ConnectManager,
   getCurrentAddressInfo,
