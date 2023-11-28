@@ -197,18 +197,15 @@ export default {
           (item) => item.value === this.epoch
         ).label;
         let baseApi = getCurrentAddressInfo().getApi().baseApi;
-        this.listData.contractAddress =
-          (
-            await getCurrentAddressInfo()
-              .getApi()
-              .baseApi.request(
-                `${
-                  baseApi.address().baseApiUrl
-                }/server_api/project-party-reward`,
-                "get",
-                {}
-              )
-          ).contractAddress || "0x0Dd6FA9377d623393081505ebB08530128526787";
+        this.listData.contractAddress = (
+          await getCurrentAddressInfo()
+            .getApi()
+            .baseApi.request(
+              `${baseApi.address().baseApiUrl}/server_api/project-party-reward`,
+              "get",
+              {}
+            )
+        ).contractAddress;
         let result = await baseApi.request(
           `${
             baseApi.address().baseApiUrl
