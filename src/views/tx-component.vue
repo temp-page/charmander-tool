@@ -76,8 +76,9 @@ export default {
       if (env === this.$store.state.env) {
         return;
       }
+      this.env = env;
       this.$store.commit("updateEnv", env);
-
+      initAddress(this.env);
       this.disconnect();
     },
     disconnect() {
@@ -160,7 +161,9 @@ export default {
         console.error(e);
         showToast("合约报错：" + (e.message || e));
       } finally {
-        this.show = false;
+        setTimeout(() => {
+          this.show = false;
+        }, 5000);
       }
     },
   },
