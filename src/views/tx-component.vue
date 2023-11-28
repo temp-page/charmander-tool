@@ -43,7 +43,7 @@
 
 <script>
 import { showToast } from "vant";
-import { WALLET_CONNECT_MUTATION } from "@/store/mutation-types";
+import {UPDATE_ENV, WALLET_CONNECT_MUTATION} from "@/store/mutation-types";
 import {
   ConnectManager,
   getCurrentAddressInfo,
@@ -77,7 +77,7 @@ export default {
         return;
       }
       this.env = env;
-      this.$store.commit("updateEnv", env);
+      this.$store.commit(UPDATE_ENV, env);
       initAddress(this.env);
       this.disconnect();
     },
